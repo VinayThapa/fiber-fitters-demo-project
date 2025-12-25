@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header {
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
+#nav2 {
+    background-color: #fff;
+    padding: 5px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    height: 15vh;
+    top: 0px;
+    z-index: 999;
+}
+
+#logo img {
+    width: 230px;
+}
+
+#menubar ul {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    list-style: none;
+}
+
+#menubar li a {
+    color: #333;
+    font-weight: 600;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#menubar li a:hover {
+    color: #A7518B;
+    transform: translateY(-3px);
+}
+
+#menubar button {
+    background-color: #A7518B;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    border: 2px solid #A7518B;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#menubar button:hover {
+    background-color: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    color: #A7518B;
+    border: 2px solid #A7518B;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#menubar ul, #menubar button, #nav1 li a {
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    #nav2 {
+        flex-direction: column;
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    #menubar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    #menubar.active ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #6a0dad;
+    }
+}
+
+@media (max-width: 1024px) {
+    #menubar ul {
+        gap: 15px;
+    }
+}
+
+@media (min-width: 1025px) {
+    #menubar ul {
+        gap: 30px;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+h2, h3 {
+    color: #A7518B;
+}
+
+h1 {
+    color: white;
+}
+
+.about-header {
+    background: linear-gradient(rgba(56, 0, 65, 0.5), rgba(56, 0, 65, 0.5)), url('../assets/images/about-bg.jpg') center/cover no-repeat;
+    height: 300px;
+    margin-top: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.about-header .overlay h1 {
+    font-size: 3rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.about-header .overlay p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeInUp 1.5s ease-in-out;
+    color: #f2f2f2;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.about-info .content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-info .text {
+    flex: 1;
+    padding-right: 20px;
+    animation: slideInLeft 1s ease-in-out;
+    margin-right: 20px;
+}
+
+.about-info .text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-info .text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.about-info .text ul {
+    list-style: none;
+}
+
+.about-info .text ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.about-info .text ul li i {
+    color: #2d046e;
+    margin-right: 10px;
+}
+
+.about-info .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInRight 1s ease-in-out;
+}
+
+.about-info .image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.about-mission {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-mission .content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-mission .mission, .about-mission .vision {
+    width: 45%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-mission .mission:hover, .about-mission .vision:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.about-achievements {
+    padding: 20px 20px 40px 20px;
+    background-color: #f5f5f5;
+    text-align: justify;
+}
+
+.about-achievements h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.timeline-item {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .about-header{
+        margin-top: 21vh;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-mission .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .about-mission .mission, .about-mission .vision {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .about-info .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+    }
+}
+
+.footer {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    width: 376px;
+    flex-direction: row;
+}
+
+.footer-links .company {
+    margin-left: 70px;
+}
+
+.footer-contact, .footer-links, .footer-about {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-contact div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-links h4, .footer-about h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+.footer-links ul, .company ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li, .company ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #b3b3b3;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li:hover, .company ul li:hover {
+    color: #ffffff;
+}
+
+.footer-about p {
+    color: #b3b3b3;
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+    .about-info .text {
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contact, .footer-links, .footer-about {
+        flex-basis: 100%;
+    }
+
+    .footer-contact p {
+        width: 250px;
+        text-align: left;
+    }
+}
